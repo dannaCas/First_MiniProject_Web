@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Deseos Grupal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/css/generalStyles.css">
+</head>
+<body class="bg-light p-5">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1><i class="bi bi-person-hearts text-danger"></i> Deseos del Grupo</h1>
+            <a href="perfil.html" class="btn btn-outline-secondary">Volver a mi Perfil</a>
+        </div>
+        
+        <div id="contenedorListas" class="row g-3">
+            </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const contenedor = document.getElementById('contenedorListas');
+            let hayDatos = false;
+
+            // Buscar listas de deseos
+            for (let i = 0; i < localStorage.length; i++) {
+                const clave = localStorage.key(i);
+
+                if (clave.startsWith('wishlist_')) {
+                    hayDatos = true;
+                    const nombreUsuario = clave.replace('wishlist_', '');
+                    const deseos = localStorage.getItem(clave);
+
+                    // Crear tarjeta para cada usuario
+                    const card = `
+                        <div class="col-md-4">
+                            <div class="card shadow-sm h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold text-primary">
+                                        <i class="bi bi-person-fill"></i> ${nombreUsuario}
+                                    </h5>
+                                    <p class="card-text text-muted italic">"${deseos}"</p>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    contenedor.innerHTML += card;
+                }
+            }
+
+            if (!hayDatos) {
+                contenedor.innerHTML = '<div class="alert alert-info">Nadie ha guardado su lista de deseos aún.</div>';
+            }
+        });
+    </script>
+</body>
+</html>

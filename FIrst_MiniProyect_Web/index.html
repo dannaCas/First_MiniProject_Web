@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Drawly</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/MEDIA/icon_2.png" type="image/png">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/d90850e71e.js" crossorigin="anonymous"></script>
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="./css/indexStyles.css">
+    <link rel="stylesheet" href="./css/generalStyles.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav  class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">           
+            <a class="navbar-brand" href="#">
+                <img src="./MEDIA/icon_2.png" alt="Brand" class="img-fluid brand-icon">
+                <span class="brand-text">Drawly</span>
+            </a>
+
+            <!-- Botón hamburguesa -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-label="Menú">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menú -->
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/PAGES/login.html?redirect=profile">
+                            Iniciar Sesión
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#HowItWorks">
+                            ¿Cómo Funciona?
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#HollyDays">
+                            Festividades
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/PAGES/perfil.html">
+                            <i class="fa-solid fa-circle-user user-page"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section  class="hero-section align-items-center align-items-lg-center pt-2">
+        <div class="container">
+            <div class="row align-items-center">
+
+                <!-- TEXTO -->
+                <div class="col-lg-6 order-2 order-lg-1 text-center text-lg-start">
+                    <h1 class="display-5 display-md-4 display-lg-3 fw-bold mb-4 hero-title">
+                        Celebra mejor.<br>
+                        <span class="highlight-text">Sortea juntos.</span>
+                    </h1>
+
+                    <p class="lead mb-4 hero-subtitle">
+                        Crea sorteos divertidos y sin complicaciones para cualquier celebración:
+                        amigo secreto, cumpleaños, eventos de equipo o simplemente por diversión.
+                    </p>
+
+                    <!-- STATS -->
+                    <div class="row g-3 mb-4 text-center text-lg-start">
+                        <div class="col-4">
+                            <div class="stat-number">10k+</div>
+                            <small class="stat-label">Sorteos</small>
+                        </div>
+                        <div class="col-4">
+                            <div class="stat-number">5k+</div>
+                            <small class="stat-label">Usuarios</small>
+                        </div>
+                        <div class="col-4">
+                            <div class="stat-number">98%</div>
+                            <small class="stat-label">Felices</small>
+                        </div>
+                    </div>
+
+                    <!-- BOTONES -->
+                    <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start mb-4">
+                        <a href="/PAGES/login.html?redirect=drawForm" class="btn btn-primary-custom btn-lg">
+                            Inicia un sorteo →
+                        </a>
+                        <button type="button" class="btn btn-outline-custom btn-lg" data-bs-toggle="modal" data-bs-target="#joinDrawModal">
+                            Tengo un código
+                        </button>
+                    </div>
+                </div>
+
+                <!-- IMAGEN -->
+                <div class="col-lg-6 order-1 order-lg-2 text-center mb-4 mb-lg-0">
+                    <div class="position-relative d-inline-block hero-image-wrapper">
+                        <img src="./MEDIA/heroImage.png" alt="Ilustración sorteo" class="img-fluid hero-image">
+                        <!-- Elementos decorativos -->
+                        <div class="floating-element floating-element-1 d-none d-md-flex">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="floating-element floating-element-2 d-none d-md-flex">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="floating-element floating-element-3 d-none d-md-flex">
+                            <i class="fas fa-magic"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL PARA INGRESAR A SORTEO -->
+    <div class="modal fade" id="joinDrawModal" tabindex="-1" aria-labelledby="joinDrawLabel" aria-hidden="true">  
+        <div class="modal-dialog modal-dialog-centered modal-md">           
+            <div class="modal-content drawly-modal">
+
+                <!-- HEADER -->
+                <div class="modal-header flex-column">
+                    <h2 class="modal-title w-100 text-center wizard-title fw-bold mb-2" id="joinDrawLabel">
+                        Tengo un <span> código de sorteo </span>
+                    </h2>
+                    <div class="text-center">
+                        <p class="wizard-subtitle mb-0">Ingresa el código que te compartieron para acceder al sorteo!</p>
+                    </div>
+                    <button type="button" class="btn-close position-absolute end-0 me-3 " data-bs-dismiss="modal"></button>
+                </div>
+
+                <!-- BODY -->
+                <div class="modal-body px-4 pb-4">
+
+                    <!-- CÓDIGO -->
+                    <div class="mb-4">
+                        <label class="form-label-custom">Código del sorteo</label>
+                        <div class="row g-2">
+                            <div class="col-12 col-md-8">
+                                <input type="text" id="drawCode" class="form-control minimal-input" placeholder="Ej: PTG-2BTS">
+                            </div>
+                            <div class="col-12 col-md-4 d-grid">
+                                <button class="btn btn-primary-custom" onclick="validarCodigo()"> Validar </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PARTICIPANTE -->
+                    <div class="mb-3">
+                        <label class="form-label-custom">Ingresa tu nombre</label>
+                        <select id="participantSelect" class="minimal-select w-100" disabled>
+                            <option value="">Primero valida el código</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- FOOTER -->
+                <div class="modal-footer border-0 justify-content-center pb-4">
+                    <button type="button" class="btn btn-outline-custom" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary-custom" id="enterDrawBtn" disabled>Entrar al sorteo</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CÓMO FUNCIONA -->
+    <section id="HowItWorks" class="how-it-works py-5 position-relative overflow-hidden">
+        <div class="position-absolute top-0 start-0 w-100 h-100 opacity-25">
+            <div class="position-absolute top-0 start-0 translate-middle">
+                <i class="fas fa-circle text-primary" style="font-size: 200px; opacity: 0.1;"></i>
+            </div>
+            <div class="position-absolute bottom-0 end-0 translate-middle">
+                <i class="fas fa-circle text-warning" style="font-size: 300px; opacity: 0.1;"></i>
+            </div>
+        </div>
+
+        <div class="container position-relative">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold mb-3">
+                    ¿Cómo <span class="text-primary" style="background: linear-gradient(135deg, var(--pink), var(--orange)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">funciona?</span>
+                </h2>
+                <p class="text-secondary-emphasis lead mb-0 mx-auto" style="max-width: 600px;">
+                    Organiza tu sorteo en menos de un minuto. ¡Así de fácil!
+                </p>
+            </div>
+
+            <!-- Pasos -->
+            <div class="row g-4">
+                <!-- Paso 1 -->
+                <div class="col-md-4">
+                    <div class="step-card card h-100 border-0 text-center p-4">
+                        <div class="card-body">
+                            <div class="step-icon mb-4 mx-auto">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h5 class="card-title fw-bold mb-3">Agrega participantes</h5>
+                            <p class="card-text text-secondary">
+                                Invita a tus amigos, familia o equipo fácilmente.
+                            </p>
+                            <div class="mt-4">
+                                <span class="badge bg-light text-dark rounded-pill px-3 py-2">
+                                    <i class="fas fa-check-circle text-success me-2"></i>Gratis
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 2 -->
+                <div class="col-md-4">
+                    <div class="step-card card h-100 border-0 text-center p-4">
+                        <div class="card-body">
+                            <div class="step-icon mb-4 mx-auto">
+                                <i class="fas fa-random"></i>
+                            </div>
+                            <h5 class="card-title fw-bold mb-3">Haz el sorteo</h5>
+                            <p class="card-text text-secondary">
+                                Nosotros nos encargamos de asignar los nombres al azar.
+                            </p>
+                            <div class="mt-4">
+                                <span class="badge bg-light text-dark rounded-pill px-3 py-2">
+                                    <i class="fas fa-shield-alt text-primary me-2"></i>100% seguro
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 3 -->
+                <div class="col-md-4">
+                    <div class="step-card card h-100 border-0 text-center p-4 position-relative">
+                        <div class="position-absolute top-0 end-0 mt-3 me-3">
+                            <span class="badge bg-warning text-dark px-3 py-2 rounded-pill">
+                                <i class="fas fa-star me-1"></i>
+                            </span>
+                        </div>
+                        <div class="card-body">
+                            <div class="step-icon mb-4 mx-auto">
+                                <i class="fas fa-gift"></i>
+                            </div>
+                            <h5 class="card-title fw-bold mb-3">Celebra!</h5>
+                            <p class="card-text text-secondary">
+                                Cada persona recibe su resultado de forma privada.
+                            </p>
+                            <div class="mt-4">
+                                <span class="badge bg-light text-dark rounded-pill px-3 py-2">
+                                    <i class="fas fa-envelope text-info me-2"></i>Notificación
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5">
+                <a href="/PAGES/login.html?redirect=drawForm" class="btn btn-lg px-5 py-3 rounded-pill btn-primary-custom">
+                    Comenzar ahora
+                    <i class="fas fa-arrow-right ms-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Celebraciones -->
+    <section id="HollyDays" class="celebrations py-6">
+        <div class="container">
+            <!-- Header -->
+            <div class="text-center mb-5">
+                <h2 class="celebrations-title">Para cualquier ocasión</h2>
+                <p class="celebrations-subtitle">
+                    Sorteos temáticos listos para cada celebración especial.
+                </p>
+            </div>
+
+            <!-- Carousel -->
+            <div id="celebrationCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <!-- SLIDE 1 -->
+                    <div class="carousel-item active">
+                        <div class="row g-4 justify-content-center">
+
+                            <div class="col-6 col-md-4 col-lg-3">
+                                <div class="celebration-card">
+                                    <div class="celebration-icon">
+                                        <img src="./MEDIA/christmas_icon.png" alt="Ilustración Navidad" class="img-thumbnail card_icons">
+                                    </div>
+                                    <h6>Navidad</h6>
+                                    <span class="celebration-tag">Amigo secreto</span>
+                                </div>
+                            </div>
+
+                            <div class="col-6 col-md-4 col-lg-3">
+                                <div class="celebration-card">
+                                    <div class="celebration-icon">
+                                        <img src="./MEDIA/halloween_icon.png" alt="Ilustración Halloween" class="img-thumbnail card_icons">
+                                    </div>
+                                    <h6>Halloween</h6>
+                                    <span class="celebration-tag">Halloween</span>
+                                </div>
+                            </div>
+
+                            <div class="col-6 col-md-4 col-lg-3">
+                                <div class="celebration-card">
+                                    <div class="celebration-icon">
+                                        <img src="./MEDIA//birthday_icon.png" alt="Ilustración Cumpleanos" class="img-thumbnail card_icons">
+                                    </div>
+                                    <h6>Cumpleaños</h6>
+                                    <span class="celebration-tag">Regalos</span>
+                                </div>
+                            </div>
+
+                            <div class="col-6 col-md-4 col-lg-3">
+                                <div class="celebration-card">
+                                    <div class="celebration-icon">
+                                        <img src="./MEDIA/valentine_icon.png" alt="Ilustración San Valentin" class="img-thumbnail card_icons">
+                                    </div>
+                                    <h6>San Valentín</h6>
+                                    <span class="celebration-tag">Parejas</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SLIDE 2 -->
+                    <div class="carousel-item">
+                        <div class="row g-4 justify-content-center">
+
+                            <div class="col-6 col-md-4 col-lg-3">
+                                <div class="celebration-card">
+                                    <div class="celebration-icon">
+                                        <img src="./MEDIA/children_day_icon.png" alt="Ilustración Niños" class="img-thumbnail card_icons">
+                                    </div>
+                                    <h6>Día del Niño</h6>
+                                    <span class="celebration-tag">Pequeños</span>
+                                </div>
+                            </div>
+
+                            <div class="col-6 col-md-4 col-lg-3">
+                                <div class="celebration-card">
+                                    <div class="celebration-icon">
+                                        <img src="./MEDIA/mother_day_icon.png" alt="Ilustración Madre" class="img-thumbnail card_icons">
+                                    </div>
+                                    <h6>Día de la Madre</h6>
+                                    <span class="celebration-tag">Familia</span>
+                                </div>
+                            </div>
+
+                            <div class="col-6 col-md-4 col-lg-3">
+                                <div class="celebration-card">
+                                    <div class="celebration-icon">
+                                        <img src="./MEDIA/fathers_day_icon.png" alt="Ilustración Padre" class="img-thumbnail card_icons">
+                                    </div>
+                                    <h6>Día del Padre</h6>
+                                    <span class="celebration-tag">Familia</span>
+                                </div>
+                            </div>
+
+                            <div class="col-6 col-md-4 col-lg-3">
+                                <div class="celebration-card">
+                                    <div class="celebration-icon">
+                                        <img src="./MEDIA/new_year_icon.png" alt="Ilustración New Year" class="img-thumbnail card_icons">
+                                    </div>
+                                    <h6>Año Nuevo</h6>
+                                    <span class="celebration-tag">Propósitos</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Indicadores -->
+                <div class="carousel-indicators custom-indicators">
+                    <button type="button" data-bs-target="#celebrationCarousel" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#celebrationCarousel" data-bs-slide-to="1"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-box text-center">
+                <h2 class="cta-title">
+                    ¿Listo para crear tu próximo sorteo?
+                </h2>
+                <p class="cta-subtitle">
+                    Organiza intercambios, regalos y celebraciones en minutos.
+                </p>
+                <div class="cta-buttons d-flex flex-column flex-sm-row justify-content-center gap-3 mt-4">
+                    <a href="/PAGES/login.html?redirect=drawForm" class="btn btn-primary btn-lg px-4 btn-primary-custom">
+                        Crear sorteo
+                    </a>
+                    <a href="#HollyDays" class="btn btn-outline-light btn-lg px-4 btn-outline-custom">
+                        Explorar celebraciones
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+
+                <!-- Columna 1 -->
+                <div class="footer-col">
+                    <h4 class="footer-title">Drawly</h4>
+                    <p class="footer-text">
+                        <i class="fas fa-map-marker-alt"></i> Universidad Autónoma de Aguscalientes<br>
+                        <i class="fas fa-phone"></i> +52 123 456 789<br>
+                        <i class="fas fa-envelope"></i> drawly@business.com
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <!-- Columna 2 -->
+                <div class="footer-col">
+                    <h4 class="footer-title">Enlaces rápidos</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="index.html#HowItWorks">¿Cómo funciona?</a></li>
+                        <li><a href="index.html#HollyDays">Festividades</a></li>
+                        <li><a href="/PAGES/login.html?redirect=profile">Iniciar Sesión</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3 -->
+                <div class="footer-col">
+                    <h4 class="footer-title">Newsletter</h4>
+                    <p class="footer-text">Recibe las últimas novedades</p>
+                    <input type="email" class="newsletter-input" placeholder="Tu email...">
+                    <button class="newsletter-btn">Suscribirme</button>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>© 2026 Drawly <i class="fas fa-heart"></i> Ingeniería en Sistemas Computacionales
+                    <br>Danna Cristina Castro Hernández - Mariana Isabel Alvarado de la Huerta</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/entercode.js"></script>
+    
+</body>
+</html>

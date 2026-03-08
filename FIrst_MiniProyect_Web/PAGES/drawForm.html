@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear Sorteo | Drawly</title>
+    <link rel="icon" href="../MEDIA/icon_2.png" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/d90850e71e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/generalStyles.css">
+    <link rel="stylesheet" href="../css/drawStyles.css">
+
+</head>
+<body>
+
+        <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">           
+            <a class="navbar-brand" href="/index.html">
+                <img src="../MEDIA/icon_2.png" alt="Brand" class="img-fluid brand-icon">
+                <span class="brand-text">Drawly</span>
+            </a>
+
+            <!-- Botón hamburguesa -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-label="Menú">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menú -->
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/PAGES/login.html">
+                            Iniciar Sesión
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#HowItWorks">
+                            ¿Cómo Funciona?
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#HollyDays">
+                            Festividades
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/PAGES/perfil.html">
+                            <i class="fa-solid fa-circle-user user-page"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="drawly-wizard py-6 ">
+        <div class="container">
+            <nav aria-label="breadcrumb" class="mb-5">
+                <ol id="breadcrumb" class="breadcrumb fs-7 small justify-content-center"></ol>
+            </nav>
+            <div class="wizard-card col-12 col-md-8 col-lg-8 mx-auto " >
+                <div id="step-container"></div>
+                    <div class="wizard-buttons mt-4">
+                        <button id="prevBtn" class="btn btn-outline-secondary">Anterior</button>
+                        <button id="nextBtn" class="btn btn-primary">Siguiente</button>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+
+                <!-- Columna 1 -->
+                <div class="footer-col">
+                    <h4 class="footer-title">Drawly</h4>
+                    <p class="footer-text">
+                        <i class="fas fa-map-marker-alt"></i> Universidad Autónoma de Aguscalientes<br>
+                        <i class="fas fa-phone"></i> +52 123 456 789<br>
+                        <i class="fas fa-envelope"></i> drawly@business.com
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <!-- Columna 2 -->
+                <div class="footer-col">
+                    <h4 class="footer-title">Enlaces rápidos</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="../index.html#HowItWorks">¿Cómo funciona?</a></li>
+                        <li><a href="../index.html#HollyDays">Festividades</a></li>
+                        <li><a href="/PAGES/login.html">Iniciar Sesión</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3 -->
+                <div class="footer-col">
+                    <h4 class="footer-title">Newsletter</h4>
+                    <p class="footer-text">Recibe las últimas novedades</p>
+                    <input type="email" class="newsletter-input" placeholder="Tu email...">
+                    <button class="newsletter-btn">Suscribirme</button>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>© 2026 Drawly <i class="fas fa-heart"></i> Ingeniería en Sistemas Computacionales
+                    <br>Danna Cristina Castro Hernández - Mariana Isabel Alvarado de la Huerta</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/draw.js"></script>
+</body>
+</html>

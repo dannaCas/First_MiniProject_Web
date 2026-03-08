@@ -1,0 +1,162 @@
+body{
+    display:flex;
+    flex-direction:column;
+}
+
+.hidden { display: none !important; }
+
+.card {
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    max-width: 600px;
+}
+
+.login-card {
+    border-radius: 24px;
+    transition: all 0.3s ease;
+}
+
+#cajaimagenes img { 
+    cursor: grab; 
+    margin: 5px; 
+    width: 90px;
+    height: 90px;
+}
+
+.login-card:hover {
+    transform: translateY(-5px);
+}
+
+.login-card:hover::before {
+    opacity: 0.6;
+}
+
+/* Títulos */
+.login-card h3 {
+    color: var(--base);
+    font-weight: 600;
+    font-size: 1.8rem;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem !important;
+    position: relative;
+    display: inline-block;
+}
+
+.login-card h3::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--pink), var(--orange));
+    border-radius: 3px;
+    animation: titleLine 0.6s ease-out;
+}
+
+/* Subtítulos */
+.login-card .text-muted {
+    color: var(--blue) !important;
+    font-size: 1rem;
+    font-weight: 400;
+    opacity: 0.9;
+    margin-bottom: 2rem !important;
+}
+
+/* Formularios */
+.login-card .form-control,
+.login-card .form-select {
+    border: 2px solid rgba(158, 211, 229, 0.3);
+    border-radius: 20px;
+    padding: 0.85rem 1.4rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: white;
+    color: var(--base);
+}
+
+.login-card .form-control::placeholder {
+    color: var(--light-blue);
+    opacity: 0.6;
+    font-weight: 300;
+}
+
+/* Textarea */
+.login-card textarea.form-control {
+    min-height: 160px;
+    line-height: 1.7;
+    resize: vertical;
+    font-size: 1rem;
+    background: linear-gradient(135deg, white, var(--white-1));
+}
+
+/* Checkbox  */
+.login-card .form-check {
+    padding-left: 2rem;
+    margin-top: 1rem;
+}
+
+.login-card .form-check-input {
+    width: 1.3rem;
+    height: 1.3rem;
+    margin-left: -2rem;
+    border: 2px solid var(--light-blue);
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.login-card .form-check-input:checked {
+    background-color: var(--pink);
+    border-color: var(--pink);
+    animation: checkPop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.login-card .bg-light.rounded-pill:hover {
+    border-color: var(--pink);
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(232, 71, 151, 0.15);
+}
+
+.login-card .btn-outline-danger {
+    border: 2px solid var(--coral);
+    color: var(--pink);
+    background: white;
+    font-size: 1rem;
+    line-height: 1;
+    transition: all 0.3s ease;
+}
+
+.login-card .btn-outline-danger:hover {
+    background: var(--pink);
+    border-color: var(--pink);
+    color: white;
+    transform: rotate(90deg) scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .login-card {
+        padding: 2rem;
+        border-radius: 28px;
+    }
+    
+    .code-box {
+        font-size: 1.6rem;
+        padding: 1.4rem 2rem;
+    }
+    
+    .login-card h3 {
+        font-size: 1.5rem;
+    }
+}
+
+.login-link {
+    color: var(--pink) ;        
+    text-decoration: none ;           
+    transition: 0.2s;
+}
+
+.login-link:hover {
+    color: var(--orange);          
+    font-weight: 600 !important;
+}

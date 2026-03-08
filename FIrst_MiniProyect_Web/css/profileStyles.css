@@ -1,0 +1,80 @@
+.profile-page {
+    background: radial-gradient(circle at 50% 30%, #f8f4f1, #f8f0de, #fff9dc);
+    min-height: 100vh;
+}
+
+.profile-header {
+    background: linear-gradient(
+        135deg,
+        var(--pink),
+        var(--orange)
+    );
+    color: white;
+    padding: 70px 0 60px;
+    margin-bottom: 50px;
+    box-shadow: 0 8px 25px rgba(98, 34, 34, 0.6);
+}
+
+.profile-header h1 {
+    letter-spacing: 0.5px;
+}
+
+.profile-header p {
+    opacity: 0.9;
+}
+
+
+.profile-card {
+    border-radius: 18px;
+    transition: all 0.25s ease;
+    background: white;
+    padding: 1.5rem;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.05);
+}
+
+.profile-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 35px rgba(0,0,0,0.1);
+}
+
+.profile-card .card-title {
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.highlight-text {
+    background: linear-gradient(
+        135deg,
+        var(--pink),
+        var(--orange),
+        var(--yellow)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.list-group-item {
+    padding: 16px 20px;
+    font-size: 1rem;
+}
+
+.list-group-item:last-child {
+    border-bottom: none;
+}
+
+
+.wishlist-input {
+    border-radius: 12px;
+    resize: none;
+    font-size: 0.95rem;
+}
+
+.wishlist-input:focus {
+    border-color: var(--pink);
+
+    box-shadow: 0 0 0 3px rgba(255, 99, 132, 0.15);
+}

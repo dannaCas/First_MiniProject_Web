@@ -1,0 +1,433 @@
+/*===============================
+        PALETA DE COLORES
+===============================*/
+:root {
+    --base: #193c42;
+    --blue: #54889e;
+    --light-blue: #9ed3e5;
+    --pink: #e84797;
+    --coral: #ffb3b3;
+    --orange: #f58d4e;
+    --yellow: #e8cd1a;
+    --white-1: #f8f4f1;
+
+    --shadow-soft: 0 4px 12px rgba(84, 136, 158, 0.25);
+    --shadow-strong: 0 8px 24px rgba(25, 60, 66, 0.35);
+}
+
+/* ==========================================
+            ESTILOS GENERALES            
+   ========================================== */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: radial-gradient(circle at 50% 30%, #f8f4f1, #f8f0de, #fff9dc);
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/*===============================
+        BOTONES GENERALES
+===============================*/
+.btn-primary-custom {
+    background: linear-gradient(
+        135deg,
+        var(--pink),
+        var(--orange)
+    );
+    border: none;
+    color: white;
+    border-radius: 50px;
+    padding: 14px 32px;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(232, 71, 151, 0.25);
+}
+
+/* Efecto brillo */
+.btn-primary-custom::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.4),
+        transparent
+    );
+    transition: left 0.6s ease;
+}
+
+.btn-primary-custom:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(232, 71, 151, 0.4);
+}
+
+.btn-primary-custom:hover::before {
+    left: 100%;
+}
+
+.btn-outline-custom {
+    border: 2px solid var(--blue);
+    color: var(--blue);
+    border-radius: 50px;
+    padding: 14px 32px;
+    font-weight: 600;
+    background: transparent;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.btn-outline-custom::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--blue);
+    width: 0%;
+    transition: width 0.3s ease;
+    z-index: -1;
+}
+
+.btn-outline-custom:hover {
+    color: white;
+    transform: translateY(-4px);
+}
+
+.btn-outline-custom:hover::before {
+    width: 100%;
+}
+
+/*===============================
+            NAVBAR
+===============================*/
+.navbar {
+    background: var(--base) !important;
+    box-shadow: var(--shadow-strong);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    border-bottom: 4px solid var(--blue);
+}
+
+
+/* ==========================================
+        BRAND / LOGO                 
+========================================== */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover {
+    transform: translateY(-2px);
+}
+
+.brand-icon {
+    height: 5rem;
+    margin-right: 1.2rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.navbar-brand:hover .brand-icon {
+    transform: scale(1.15) rotate(10deg);
+}
+
+@keyframes floaty {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-4px); }
+    100% { transform: translateY(0px); }
+}
+
+.brand-text {
+    font-size: 1.9rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    background: linear-gradient(
+        45deg,
+        var(--pink),
+        var(--coral),
+        var(--orange)
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ==========================================
+            BOTÓN HAMBURGUESA            
+   ========================================== */
+.navbar-toggler {
+    padding: 0.5rem 0.75rem !important;
+    transition: all 0.3s ease;
+}
+
+.navbar-toggler:hover {
+    transform: scale(1.05);
+    color: var(--white-1);
+}
+
+/* ==========================================
+            LINKS DE NAVEGACIÓN          
+   ========================================== */
+.navbar-nav {
+    gap: 2rem;
+}
+
+.nav-link {
+    color: var(--white-1) !important;
+    font-weight: 500;
+    padding: 0.6rem 1.2rem !important;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: white !important;
+    transform: translateY(-3px) scale(1.2);
+    font-weight: 700;
+}
+
+/* Línea inferior */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    border-radius: 10px;
+    background: linear-gradient(
+        90deg,
+        var(--pink),
+        var(--orange),
+        var(--yellow)
+    );
+
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 80%;
+}
+
+/* Íconos */
+.nav-link i {
+    font-size: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.nav-link:hover i {
+    transform: scale(1.2) rotate(-5deg);
+}
+
+
+/*===============================
+            FOOTER
+===============================*/
+
+.footer {
+    background: var(--base);
+    border-top: 3px solid var(--blue);
+    padding: 50px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-col {
+    text-align: left;
+}
+
+.footer-title {
+    font-size: 1.9rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    background: linear-gradient(
+        45deg,
+        var(--pink),
+        var(--coral),
+        var(--orange)
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.footer-text {
+    color: var(--white-1);
+    opacity: 0.9;
+    line-height: 1.8;
+    margin-bottom: 10px;
+}
+
+.footer-text i {
+    background: linear-gradient(
+        45deg,
+        var(--pink),
+        var(--coral),
+        var(--orange)
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background: rgba(165, 214, 165, 0.1);
+    border: 2px solid var(--white-1);
+    border-radius: 50%;
+    color: var(--white-1);
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-link:hover {
+    background: linear-gradient(
+        45deg,
+        var(--pink),
+        var(--coral),
+        var(--orange)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 5px 20px var(--coral);
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: var(--white-1);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    position: relative;
+    padding-left: 15px;
+}
+
+.footer-links a:hover {
+    background: linear-gradient(
+        45deg,
+        var(--pink),
+        var(--coral),
+        var(--orange)
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 18px var(--coral);
+    transform: translateX(10px);
+}
+
+.footer-links a:hover::before {
+    left: -5px;
+}
+
+.newsletter-input {
+    background: rgba(255,255,255,0.1);
+    border: 2px solid rgba(165, 214, 165, 0.3);
+    border-radius: 30px;
+    padding: 10px 18px;
+    color: white;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.newsletter-input:focus {
+    border-color: var(--coral);
+    box-shadow: 0 0 10px var(--pink);
+    outline: none;
+}
+
+.newsletter-btn {
+    background: linear-gradient(
+        45deg,
+        var(--pink),
+        var(--coral),
+        var(--orange)
+    );
+    color: var(--white-1);
+    border: none;
+    border-radius: 30px;
+    padding: 10px 25px;
+    font-weight: 600;
+    width: 100%;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.newsletter-btn:hover {
+    background: var(--pink);
+    box-shadow: 0 0 10px var(--smiski-glow);
+    transform: translateY(2px);
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 30px;
+    margin-top: 30px;
+    border-top: 1px solid rgba(165, 214, 165, 0.2);
+    color: rgba(232, 240, 232, 0.7);
+    font-size: 0.95rem;
+}
+
+.copyright i {
+    background: linear-gradient(
+        45deg,
+        var(--pink),
+        var(--coral),
+        var(--orange)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0 3px;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.highlight-text {
+    background: linear-gradient(
+        135deg,
+        var(--pink),
+        var(--orange),
+        var(--yellow)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
